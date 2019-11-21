@@ -36,11 +36,11 @@ void DistanceSensor::printEvent(const DistanceSensor::Event& e) {
 
 DistanceSensor::DistanceSensor(const DistanceSensor::Pins& pins) 
     : _pins(pins) 
-    , _sleep_time(DISTANCE_TASK_DEFAULT_SLEEP) 
     , _is_event(false) 
     , _end_count(0) 
     , _pos(0) 
-    , _mm(0) {
+    , _mm(0) 
+    , _sleep_time(DISTANCE_TASK_DEFAULT_SLEEP) {
     _sonar.reset(new NewPing(_pins.trigger, _pins.echo, MAX_DISTANCE));
     delay(100);
     #ifdef DEBUG

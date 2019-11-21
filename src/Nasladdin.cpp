@@ -23,11 +23,11 @@ PNasladdin& Nasladdin::getPtr(const DistanceSensor::Pins& pins) {
 
 Nasladdin::Nasladdin(const DistanceSensor::Pins& pins) 
     : _is_configure(false)
-    , _sleep_time(NASLADDIN_TASK_DEFAULT_SLEEP) 
     , _state(State::READING_EVENTS) 
     , _last_snd_time(0)
     , _pos(0) 
-    , _loaded(0) {
+    , _loaded(0) 
+    , _sleep_time(NASLADDIN_TASK_DEFAULT_SLEEP) {
     #ifdef DEBUG
     Serial.println("Nasladdin");
     #endif
